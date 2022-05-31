@@ -5,7 +5,7 @@
 ## Instalation
 
 ```sh
-import "./KYC.sol";
+import "https://github.com/Biswanathdas1996/kYC-Decentralized/blob/master/KYC.sol";
 ```
 
 ```sh

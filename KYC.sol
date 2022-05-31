@@ -1,22 +1,27 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
-interface  InterfaceKYC{
-    function getAllUser() external view returns(string[] memory);
-}
-
-contract KYC {
-
     struct User {
         string abiLink;
         string data;
         string uid;
         string metadata;
     }
+
+interface  InterfaceKYC{
+    function getAllUser() external view returns(string[] memory);
+    function getUserData(string memory uid) external view returns(User memory);
+    function addUser(string memory uid, string memory abiLink , string memory data ) external ;
+    function upadteUserAbi(string memory uid ,string memory abiLink, string memory data  ) external;
+    function setUserMetadata(string memory metadata, string memory uid) external;
+}
+
+contract KYC {
+
      mapping(string => User) public users;
      string[] public userList ;
 
-     function addUser(string memory uid, string memory abiLink , string memory data ) public virtual {
+     function addUser(string memory uid, string memory abiLink , string memory data ) external virtual {
         User memory newUser = User({
             abiLink:abiLink,
             data: data,
@@ -36,13 +41,13 @@ contract KYC {
         return userData;
     }
 
-    function upadteUserAbi(string memory uid ,string memory abiLink, string memory data  ) public {
+    function upadteUserAbi(string memory uid ,string memory abiLink, string memory data  ) external {
          User storage userData = users[uid];
          userData.abiLink = abiLink;
          userData.data = data;
     }
 
-    function setUserMetadata(string memory metadata, string memory uid) public {
+    function setUserMetadata(string memory metadata, string memory uid) external {
          User storage userData = users[uid];
          userData.metadata = metadata;
     }
