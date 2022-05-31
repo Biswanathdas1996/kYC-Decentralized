@@ -31,6 +31,11 @@ contract KYC {
         return userList;
     }
 
+    function getUserData(string memory uid) external view returns(User memory){
+        User storage userData = users[uid];
+        return userData;
+    }
+
     function upadteUserAbi(string memory uid ,string memory abiLink, string memory data  ) public {
          User storage userData = users[uid];
          userData.abiLink = abiLink;
