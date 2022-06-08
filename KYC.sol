@@ -9,6 +9,12 @@ pragma solidity ^0.8.13;
     }
 
 interface  InterfaceKYC{
+    struct UserKYC {
+        string abiLink;
+        string data;
+        string uid;
+        string metadata;
+    }
     function getUserData(string memory uid) external view returns(UserKYC memory);
     function getAllUserKYCData() external view returns(string[] memory);
     function addUser(string memory uid, string memory abiLink , string memory data ) external;
