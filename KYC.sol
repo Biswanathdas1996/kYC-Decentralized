@@ -10,6 +10,7 @@ pragma solidity ^0.8.13;
 
 interface  InterfaceKYC{
     function getUserData(string memory uid) external view  returns(string[] memory);
+    function getABI(string memory uid) external view  returns(string memory);
     function validateUser(string memory uid) external view  returns(bool);
     function getAllUserKYCData() external view returns(string[] memory);
     function addUser(string memory uid, string memory abiLink , string memory data ) external;
@@ -45,6 +46,11 @@ contract KYC {
         returnData[2] = userData.metadata;
         returnData[3] = userData.data;
        return returnData;
+    }
+
+    function getABI(string memory uid) external view  returns(string memory){
+        UserKYC storage userData = users[uid];
+        return userData.abiLink;
     }
 
 
