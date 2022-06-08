@@ -13,7 +13,7 @@ import "https://github.com/Biswanathdas1996/kYC-Decentralized/blob/master/KYC.so
 ```sh
 contract OTHER {
 
-    address KYCaddress = 0xC9122260fD78C423BXXXXXXXXXXXXXXXX;
+    address KYCaddress = 0xC9122260fD78C423B7Bc804e41F803a798A59C27;
     InterfaceKYC kyc = InterfaceKYC(KYCaddress);
 
     // To get all the user data from KYC
