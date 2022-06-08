@@ -18,12 +18,6 @@ interface  InterfaceKYC{
     function setUserMetadata(string memory metadata, string memory uid) external;
 }
 
-interface  InterfaceKYCValidation{
-    
-    function validateUser(string memory uid) external view  returns(bool);
-    
-}
-
 contract KYC {
 
      mapping(string => UserKYC) public users;

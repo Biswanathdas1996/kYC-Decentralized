@@ -1,26 +1,24 @@
-# ces-system
+# Decentralized KYC
 
 > Author: `Biswanath Das`
 
-## Instalation
+## KYC contract to import
 
 ```sh
 import "https://github.com/Biswanathdas1996/kYC-Decentralized/blob/master/KYC.sol";
 ```
 
+## Sample contract
+
 ```sh
 contract OTHER {
 
-    address KYCaddress = 0x32616DbDxxxxxxxxxxxxxxxxx;
+    address KYCaddress = 0xC9122260fD78C423XXXXXXXXXXXXXX;
     InterfaceKYC kyc = InterfaceKYC(KYCaddress);
 
 
     function getAllUserKYC() public view returns( string[] memory ) {
         return kyc.getAllUserKYCData();
-    }
-
-    function getUserDataKYC(string memory uid) public view returns(UserKYC memory) {
-        return kyc.getUserData(uid);
     }
 
     function addUserForKYC(string memory uid, string memory abiLink , string memory data) public {
